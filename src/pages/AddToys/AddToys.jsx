@@ -1,6 +1,8 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const AddToys = () => {
+
 
 
 
@@ -14,8 +16,9 @@ const AddToys = () => {
         const category = form.category.value;
         const description = form.description.value;
         const photo = form.photo.value;
-
-        const addedToys = { name, quantity, category, description, photo }
+        // demo rating
+        const rating=4.5;
+        const addedToys = { name, quantity, category, description, photo ,rating}
 
         console.log(addedToys);
         // send data to the server 
@@ -29,6 +32,12 @@ const AddToys = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Successfully Added A Toy',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                })
             })
 
     }
