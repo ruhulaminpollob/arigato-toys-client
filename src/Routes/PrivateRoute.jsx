@@ -1,12 +1,13 @@
 import React from 'react';
 import { useContext } from 'react';
 import { Navigate } from 'react-router-dom';
+import Loading from '../pages/Shared/Loading/Loading';
 import { AuthContext } from '../providers/AuthProvider';
 
 const PrivateRoute = ({children}) => {
     const {user,loading}=useContext(AuthContext)
     if (loading) {
-        return <div className='text-4xl font-bold text-center my-10'>Loading...</div>
+        return <Loading></Loading>
     }
     if (user) {
         return children;

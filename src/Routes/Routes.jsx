@@ -7,13 +7,14 @@ import Home from "../pages/Home/Home/Home";
 import MyToys from "../pages/MyToys/MyToys";
 import NotFound from "../pages/NotFound/NotFound";
 import Login from "../pages/User/Login/Login";
+import LogOut from "../pages/User/LogOut/LogOut";
 import SignUp from "../pages/User/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <PrivateRoute><Main></Main></PrivateRoute>,
+    element: <Main></Main>,
     children: [
       {
         path: '/',
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
       {
         path:'/login',
         element:<Login />
-      }
+      },
     ]
   },
   {

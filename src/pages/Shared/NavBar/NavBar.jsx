@@ -1,15 +1,38 @@
 import React from 'react';
+import Swal from 'sweetalert2'
+import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline'
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import Loading from '../Loading/Loading';
 
 const NavBar = () => {
 
-    const {user}=useContext(AuthContext)
-    console.log(user.photoURL)
+    const { user, loading, logOut } = useContext(AuthContext)
+    if (loading) {
+        return <Loading></Loading>
+    }
+
+    // logout 
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                Swal.fire({
+                    title: 'Successful',
+                    text: 'Log out successful',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+    console.log(user?.photoURL)
 
     const navLink = <>
-    {/* All Toys, My Toys, Add A Toy, Blogs, and User profile picture */}
+        {/* All Toys, My Toys, Add A Toy, Blogs, and User profile picture */}
         <li className='hover:text-cyan-400'><Link to="/">Home</Link></li>
         <li className='hover:text-cyan-400'><Link to="/alltoys">All Toys</Link></li>
         <li className='hover:text-cyan-400'><Link to="/mytoys">My Toys</Link></li>
@@ -40,16 +63,22 @@ const NavBar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="font-f menu menu-horizontal px-1">
-                        {
-                            navLink
-                        }
+                    {
+                        navLink
+                    }
                 </ul>
             </div>
             <div className="navbar-end">
-                <div>
-                    <img src={user.photoURL} alt="" />
-                </div>
-                <Link to='/login'>Login</Link>
+                {
+                    user ?
+                        <div className='flex gap-2'>
+                            <div className='border-2 border-cyan-400 h-10 w-10 rounded-full overflow-hidden'>
+                                <img className='' src={user?.photoURL} title={user?.displayName} alt="" />
+                            </div>
+                            <button onClick={handleLogOut}><ArrowRightOnRectangleIcon className='text-yellow-400 h-6 w-6'></ArrowRightOnRectangleIcon></button>
+                        </div> :
+                        <Link className='hover:text-cyan-400' to='/login'>Login</Link>
+                }
             </div>
         </div>
     );

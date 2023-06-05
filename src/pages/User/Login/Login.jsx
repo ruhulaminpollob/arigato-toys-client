@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BeakerIcon } from '@heroicons/react/24/solid'
+
 import { useContext } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
 
