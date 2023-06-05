@@ -24,11 +24,11 @@ const MyToys = () => {
 
     }, [])
     return (
-        <>
+        <div className=''>
             {
                 myToys.map(singleToy=><MyToysCards key={singleToy._id} singleToy={singleToy} />)
             }
-        </>
+        </div>
     );
 };
 
