@@ -8,11 +8,12 @@ import MyToys from "../pages/MyToys/MyToys";
 import NotFound from "../pages/NotFound/NotFound";
 import Login from "../pages/User/Login/Login";
 import SignUp from "../pages/User/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main></Main>,
+    element: <PrivateRoute><Main></Main></PrivateRoute>,
     children: [
       {
         path: '/',

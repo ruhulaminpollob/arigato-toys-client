@@ -2,30 +2,42 @@ import React from 'react';
 
 const AddToys = () => {
 
-    
+
 
 
     const handleAddToys = event => {
         event.preventDefault()
-        const form=event.target;
+        const form = event.target;
 
-        const name =form.toyname.value;
-        const quantity=form.quantity.value;
-        const category=form.category.value;
-        const description=form.description.value;
-        const photo=form.photo.value;
+        const name = form.toyname.value;
+        const quantity = form.quantity.value;
+        const category = form.category.value;
+        const description = form.description.value;
+        const photo = form.photo.value;
 
-        const newToys={name,quantity, category, photo}
+        const addedToys = { name, quantity, category, description, photo }
 
-        console.log(newToys);
-        
+        console.log(addedToys);
+        // send data to the server 
+        fetch('http://localhost:5000/toys', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addedToys)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+
     }
 
     return (
         <div>
 
             <h1 className='text-4xl font-bold text-center my-5 text-yellow-400 underline'>Add Toys</h1>
-            <form  onSubmit={handleAddToys}>
+            <form onSubmit={handleAddToys}>
                 {/* form row  */}
                 <div className='md:flex'>
 
@@ -88,7 +100,7 @@ const AddToys = () => {
                         <span className="label-text">Toy Description</span>
                     </label>
                     <label className="input-group">
-                        <textarea name='description' placeholder="Toy Description"  className="input  textarea textarea-bordered textarea-sm h-5 w-full max-w-full" ></textarea>
+                        <textarea name='description' placeholder="Toy Description" className="input  textarea textarea-bordered textarea-sm h-5 w-full max-w-full" ></textarea>
                     </label>
                 </div>
 

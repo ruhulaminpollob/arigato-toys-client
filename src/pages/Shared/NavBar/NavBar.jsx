@@ -1,7 +1,12 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const NavBar = () => {
+
+    const {user}=useContext(AuthContext)
+    console.log(user.photoURL)
 
     const navLink = <>
     {/* All Toys, My Toys, Add A Toy, Blogs, and User profile picture */}
@@ -41,7 +46,9 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">user</a>
+                <div>
+                    <img src={user.photoURL} alt="" />
+                </div>
                 <Link to='/login'>Login</Link>
             </div>
         </div>

@@ -5,19 +5,26 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
-    const { googleLogin } = useContext(AuthContext)
+    const { googleLogin, login } = useContext(AuthContext)
     const [error, setError] = useState('')
     const handleLogin = event => {
         event.preventDefault()
         const form = event.target;
 
-
         const email = form.email.value;
         const password = form.password.value;
 
-
         console.log(email, password);
+        login(email,password)
+        .then(result=>{
+            console.log(result);
+        })
+        .catch(err=>{
+            console.log(err);
+            setError(err.message)
+        })
     }
+    
 
     // google login
 
@@ -30,6 +37,9 @@ const Login = () => {
                 console.log(error);
                 setError(error.message)
             })
+
+
+
 
     }
 
