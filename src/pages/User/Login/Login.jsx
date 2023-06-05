@@ -1,11 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BeakerIcon } from '@heroicons/react/24/solid'
+import { useContext } from 'react';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
+    const {googleLogin}=useContext(AuthContext)
     const handleLogin = event => {
         event.preventDefault()
+        const form=event.target;
+
+        const name=form.name.value;
+        const email=form.email.value;
+
+        console.log(name,email);
     }
+
+    // google login
+
+    const handleGoogleLogin=()=>{
+        googleLogin()
+        .then(result=>{
+            console.log(result)
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+
+    }
+
     return (
         <div className=" md:w-96 mx-auto my-10 md:my-20">
             <h1 className='text-3xl font-bold text-cyan-400 text-center underline'>Login</h1>
@@ -36,7 +59,7 @@ const Login = () => {
             <div className='text-center'>
                 <hr />
                 <p>Or</p>
-                <button className='btn'>Login With Google</button>
+                <button onClick={handleGoogleLogin} className='btn'>Login With Google</button>
             </div>
         </div>
     );
