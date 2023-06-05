@@ -13,6 +13,8 @@ const NavBar = () => {
         return <Loading></Loading>
     }
 
+    const unknownUser = "https://i.ibb.co/f4B3L41/user21.png"
+    const unknownName = "Unknown"
     // logout 
 
     const handleLogOut = () => {
@@ -22,7 +24,7 @@ const NavBar = () => {
                     title: 'Successful',
                     text: 'Log out successful',
                     icon: 'success',
-                    confirmButtonText: 'Cool'
+                    confirmButtonText: 'Ok'
                 })
             })
             .catch(error => {
@@ -33,10 +35,16 @@ const NavBar = () => {
 
     const navLink = <>
         {/* All Toys, My Toys, Add A Toy, Blogs, and User profile picture */}
+
         <li className='hover:text-cyan-400'><Link to="/">Home</Link></li>
         <li className='hover:text-cyan-400'><Link to="/alltoys">All Toys</Link></li>
-        <li className='hover:text-cyan-400'><Link to="/mytoys">My Toys</Link></li>
-        <li className='hover:text-cyan-400'><Link to="/addtoys">Add A Toy</Link></li>
+        {
+            user?.email && <>
+                <li className='hover:text-cyan-400'><Link to="/mytoys">My Toys</Link></li>
+                <li className='hover:text-cyan-400'><Link to="/addtoys">Add A Toy</Link></li>
+            </>
+        }
+
         <li className='hover:text-cyan-400'><Link to="/blogs">Blogs</Link></li>
     </>
 
@@ -71,9 +79,9 @@ const NavBar = () => {
             <div className="navbar-end">
                 {
                     user ?
-                        <div className='flex gap-2'>
+                        <div className='flex gap-3'>
                             <div className='border-2 border-cyan-400 h-10 w-10 rounded-full overflow-hidden'>
-                                <img className='' src={user?.photoURL} title={user?.displayName} alt="" />
+                                <img className='' src={user?.photoURL ? user?.photoURL : unknownUser} title={user?.displayName ? user?.displayName : unknownName} alt="" />
                             </div>
                             <button onClick={handleLogOut}><ArrowRightOnRectangleIcon className='text-yellow-400 h-6 w-6'></ArrowRightOnRectangleIcon></button>
                         </div> :

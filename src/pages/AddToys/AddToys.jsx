@@ -1,11 +1,20 @@
 import React from 'react';
+import { useContext } from 'react';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../providers/AuthProvider';
+import Loading from '../Shared/Loading/Loading';
 
 const AddToys = () => {
 
+    const {user,loading}=useContext(AuthContext)
 
+    if (loading) {
+        return <Loading></Loading>
+    }
+    
+    
 
-
+    
 
     const handleAddToys = event => {
         event.preventDefault()
@@ -16,9 +25,11 @@ const AddToys = () => {
         const category = form.category.value;
         const description = form.description.value;
         const photo = form.photo.value;
+        const supplierEmail=user?.email
+        const supplierName=user?.displayName;
         // demo rating
         const rating=4.5;
-        const addedToys = { name, quantity, category, description, photo ,rating}
+        const addedToys = { name, quantity, category, description, photo ,rating ,supplierName,supplierEmail}
 
         console.log(addedToys);
         // send data to the server 
@@ -41,6 +52,7 @@ const AddToys = () => {
             })
 
     }
+    
 
     return (
         <div>
@@ -97,7 +109,7 @@ const AddToys = () => {
                         <span className="label-text">Toy URL</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name='photo' placeholder="https://demotoy.png" className="input input-bordered w-full" />
+                        <input type="text" name='photo' placeholder="https://demotoy.jpg" className="input input-bordered w-full" />
                     </label>
                 </div>
 

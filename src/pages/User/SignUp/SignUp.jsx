@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const SignUp = () => {
-    const { createUser, userDetails } = useContext(AuthContext)
+    const { createUser, userDetails, logOut } = useContext(AuthContext)
 
-    const [error,setError]=useState('')
+    const [error, setError] = useState('')
+    const navigate=useNavigate()
 
     const handleSignUp = event => {
         event.preventDefault()
@@ -23,13 +25,27 @@ const SignUp = () => {
         createUser(email, password)
             .then(result => {
                 // console.log(result);
-                userDetails(result.user, name,photo)
+                userDetails(result.user, name, photo)
                     .then(results => {
                         console.log(results);
+                        Swal.fire({
+                            title: 'Success',
+                            text: 'Account Created Successfully Now Login',
+                            icon: 'success',
+                            confirmButtonText: 'Ok'
+                        })
+
                     })
                     .catch(err => {
                         setError(err.message)
                     })
+
+
+                logOut()
+                    .then(() => { 
+                        navigate('/login')
+                    })
+                    .then(err => console.log(err))
 
             })
             .catch(error => {

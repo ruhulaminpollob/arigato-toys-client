@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useContext } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
@@ -7,6 +7,9 @@ import { AuthContext } from '../../../providers/AuthProvider';
 const Login = () => {
     const { googleLogin, login } = useContext(AuthContext)
     const [error, setError] = useState('')
+
+    const navigate=useNavigate()
+
     const handleLogin = event => {
         event.preventDefault()
         const form = event.target;
@@ -18,6 +21,7 @@ const Login = () => {
         login(email,password)
         .then(result=>{
             console.log(result);
+           navigate('/')
         })
         .catch(err=>{
             console.log(err);
@@ -32,6 +36,7 @@ const Login = () => {
         googleLogin()
             .then(result => {
                 console.log(result)
+                navigate("/")
             })
             .catch(error => {
                 console.log(error);
