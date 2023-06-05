@@ -6,6 +6,7 @@ import Blogs from "../pages/Blogs/Blogs";
 import Home from "../pages/Home/Home/Home";
 import MyToys from "../pages/MyToys/MyToys";
 import NotFound from "../pages/NotFound/NotFound";
+import Update from "../pages/Update/Update";
 import Login from "../pages/User/Login/Login";
 import LogOut from "../pages/User/LogOut/LogOut";
 import SignUp from "../pages/User/SignUp/SignUp";
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
         path:'/login',
         element:<Login />
       },
+      {
+        path:'/update/:id',
+        element:<Update />,
+        loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+      }
     ]
   },
   {

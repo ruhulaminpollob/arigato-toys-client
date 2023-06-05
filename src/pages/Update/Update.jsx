@@ -1,11 +1,16 @@
 import React from 'react';
 import { useContext } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../providers/AuthProvider';
+
 import Loading from '../Shared/Loading/Loading';
 
-const AddToys = () => {
 
+const Update = () => {
+    
+
+    const toyData=useLoaderData()
     const {user,loading}=useContext(AuthContext)
 
     if (loading) {
@@ -14,16 +19,17 @@ const AddToys = () => {
     
     
 
+    const {_id, name, quantity, category, price, description, photo}=toyData || {}
     
 
-    const handleAddToys = event => {
+    const handleUpdate = event => {
         event.preventDefault()
         const form = event.target;
 
         const name = form.toyname.value;
         const quantity = form.quantity.value;
         const category = form.category.value;
-        const price=form.price.value
+        const price = form.price.value;
         const description = form.description.value;
         const photo = form.photo.value;
         const supplierEmail=user?.email
@@ -32,10 +38,10 @@ const AddToys = () => {
         const rating=4.5;
         const addedToys = { name, quantity, category,price, description, photo ,rating ,supplierName,supplierEmail}
 
-        console.log(addedToys);
+        // console.log(addedToys);
         // send data to the server 
-        fetch('http://localhost:5000/toys', {
-            method: 'POST',
+        fetch(`http://localhost:5000/toys/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
@@ -44,12 +50,15 @@ const AddToys = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                Swal.fire({
-                    title: 'Success',
-                    text: 'Successfully Added A Toy',
-                    icon: 'success',
-                    confirmButtonText: 'Ok'
-                })
+                if (modifiedCount > 0) {
+                    
+                    Swal.fire({
+                        title: 'Success',
+                        text: 'Successfully Updated a Toy',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+                }
             })
 
     }
@@ -58,8 +67,8 @@ const AddToys = () => {
     return (
         <div>
 
-            <h1 className='text-4xl font-bold text-center my-5 text-yellow-400 underline'>Add Toys</h1>
-            <form onSubmit={handleAddToys}>
+            <h1 className='text-4xl font-bold text-center my-5 text-yellow-400 underline'>Update Toys</h1>
+            <form onSubmit={handleUpdate}>
                 {/* form row  */}
                 <div className='md:flex'>
 
@@ -69,7 +78,7 @@ const AddToys = () => {
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name='toyname' placeholder="Toy Name" className="input input-bordered w-full" />
+                            <input type="text" name='toyname' defaultValue={name} placeholder="Toy Name" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control  md:w-1/2">
@@ -77,7 +86,7 @@ const AddToys = () => {
                             <span className="label-text">Available Quantity</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name='quantity' placeholder="Available Quantity" className="input input-bordered w-full" />
+                            <input type="text" name='quantity' defaultValue={quantity} placeholder="Available Quantity" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -91,7 +100,7 @@ const AddToys = () => {
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name='category' placeholder="Category" className="input input-bordered w-full" />
+                            <input type="text" name='category' defaultValue={category} placeholder="Category" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2">
@@ -100,7 +109,7 @@ const AddToys = () => {
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name='price' placeholder="Price" className="input input-bordered w-full" />
+                            <input type="text" name='price' defaultValue={price} placeholder="Price" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -110,7 +119,7 @@ const AddToys = () => {
                         <span className="label-text">Toy URL</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name='photo' placeholder="https://demotoy.jpg" className="input input-bordered w-full" />
+                        <input type="text" name='photo' defaultValue={photo} placeholder="https://demotoy.jpg" className="input input-bordered w-full" />
                     </label>
                 </div>
 
@@ -122,16 +131,16 @@ const AddToys = () => {
                         <span className="label-text">Toy Description</span>
                     </label>
                     <label className="input-group">
-                        <textarea name='description' placeholder="Toy Description" className="input  textarea textarea-bordered textarea-sm h-5 w-full max-w-full" ></textarea>
+                        <textarea name='description' defaultValue={description} placeholder="Toy Description" className="input  textarea textarea-bordered textarea-sm h-5 w-full max-w-full" ></textarea>
                     </label>
                 </div>
 
 
 
-                <input type="submit" className='btn bg-cyan-400 text-white font-bold hover:bg-cyan-300 w-full  my-4' value="Add Toys" />
+                <input type="submit" className='btn bg-cyan-400 text-white font-bold hover:bg-cyan-300 w-full  my-4' value="Update" />
             </form>
         </div>
     );
 };
 
-export default AddToys;
+export default Update;
