@@ -1,31 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BeakerIcon } from '@heroicons/react/24/solid'
 import { useContext } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
-    const {googleLogin}=useContext(AuthContext)
+    const { googleLogin } = useContext(AuthContext)
+    const [error, setError] = useState('')
     const handleLogin = event => {
         event.preventDefault()
-        const form=event.target;
+        const form = event.target;
 
-        const name=form.name.value;
-        const email=form.email.value;
 
-        console.log(name,email);
+        const email = form.email.value;
+        const password = form.password.value;
+
+
+        console.log(email, password);
     }
 
     // google login
 
-    const handleGoogleLogin=()=>{
+    const handleGoogleLogin = () => {
         googleLogin()
-        .then(result=>{
-            console.log(result)
-        })
-        .catch(error=>{
-            console.log(error);
-        })
+            .then(result => {
+                console.log(result)
+            })
+            .catch(error => {
+                console.log(error);
+                setError(error.message)
+            })
 
     }
 
@@ -56,11 +60,15 @@ const Login = () => {
             <div className='pb-10 text-center'>
                 <p>New to Arigato Toys? Please<Link to="/signup" className='text-yellow-400'>SignUP</Link></p>
             </div>
+            <div className='text-red-600 text-center'>
+                <p>{error}</p>
+            </div>
             <div className='text-center'>
                 <hr />
                 <p>Or</p>
                 <button onClick={handleGoogleLogin} className='btn'>Login With Google</button>
             </div>
+
         </div>
     );
 };

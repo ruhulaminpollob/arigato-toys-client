@@ -1,9 +1,42 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const SignUp = () => {
+    const { createUser, userDetails } = useContext(AuthContext)
+
+    const [error,setError]=useState('')
+
     const handleSignUp = event => {
         event.preventDefault()
+        const form = event.target;
+
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const photo = form.photo.value;
+
+        console.log(name, email, password, photo);
+
+        // create user
+        createUser(email, password)
+            .then(result => {
+                // console.log(result);
+                userDetails(result.user, name,photo)
+                    .then(results => {
+                        console.log(results);
+                    })
+                    .catch(err => {
+                        setError(err.message)
+                    })
+
+            })
+            .catch(error => {
+                setError(error.message)
+                console.log(error)
+            })
+
     }
 
     return (
@@ -43,6 +76,9 @@ const SignUp = () => {
             </form>
             <div className='pb-10 text-center'>
                 <p>Already Have An Account? <Link to="/login" className='text-yellow-400'>Login</Link></p>
+            </div>
+            <div className='text-red-600 text-center'>
+                <p>{error}</p>
             </div>
         </div>
     );
