@@ -34,7 +34,7 @@ const AddToys = () => {
 
         console.log(addedToys);
         // send data to the server 
-        fetch('http://localhost:5000/toys', {
+        fetch('https://arigatou-toys-server.vercel.app/toys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

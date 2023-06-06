@@ -4,6 +4,7 @@ import AddToys from "../pages/AddToys/AddToys";
 import AllToys from "../pages/AllToys/AllToys";
 import Blogs from "../pages/Blogs/Blogs";
 import Home from "../pages/Home/Home/Home";
+import ToyDetails from "../pages/Home/ToyCollections/ToyDetails";
 import MyToys from "../pages/MyToys/MyToys";
 import NotFound from "../pages/NotFound/NotFound";
 import Update from "../pages/Update/Update";
@@ -24,6 +25,8 @@ const router = createBrowserRouter([
       {
         path:'/alltoys',
         element:<AllToys></AllToys>,
+        loader:()=>fetch(`https://arigatou-toys-server.vercel.app/toys`)
+        
       },
       {
         path:'/mytoys',
@@ -48,7 +51,12 @@ const router = createBrowserRouter([
       {
         path:'/update/:id',
         element:<Update />,
-        loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+        loader:({params})=>fetch(`https://arigatou-toys-server.vercel.app/toys/${params.id}`)
+      },
+      {
+        path:'/toydetails/:id',
+        element:<PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
+        loader:async({params})=>fetch(`https://arigatou-toys-server.vercel.app/toys/${params.id}`)
       }
     ]
   },

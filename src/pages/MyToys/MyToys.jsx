@@ -17,7 +17,7 @@ const MyToys = () => {
         return <Loading></Loading>
     }
     useEffect(() => {
-        fetch(`http://localhost:5000/mytoys?email${user?.email}`)
+        fetch(`https://arigatou-toys-server.vercel.app/mytoys?email${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyToys(data);
