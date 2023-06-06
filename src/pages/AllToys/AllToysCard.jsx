@@ -1,11 +1,17 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const AllToysCard = ({ singleToy }) => {
 
     const { _id, name, quantity, category, price, description, photo, rating, supplierName, supplierEmail } = singleToy || {}
     const navigate = useNavigate()
     const handelViewDetails = id => {
+        Swal.fire(
+            'Sorry',
+            'You have to login first',
+            'warning'
+          )
         navigate(`/toydetails/${id}`)
     }
     return (

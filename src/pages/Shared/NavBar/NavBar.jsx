@@ -18,18 +18,34 @@ const NavBar = () => {
     // logout 
 
     const handleLogOut = () => {
-        logOut()
-            .then(() => {
-                Swal.fire({
-                    title: 'Successful',
-                    text: 'Log out successful',
-                    icon: 'success',
-                    confirmButtonText: 'Ok'
-                })
-            })
-            .catch(error => {
-                console.log(error);
-            })
+        Swal.fire({
+            title: 'Are you sure?',
+            text: " You want to be loged out",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Log out'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                logOut()
+                    .then(() => {
+                        Swal.fire({
+                            title: 'Successful',
+                            text: 'Log out successful',
+                            icon: 'success',
+                            confirmButtonText: 'Ok'
+                        })
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+            }
+        })
+
+
+
+        
     }
     console.log(user?.photoURL)
 
