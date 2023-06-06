@@ -50,7 +50,7 @@ const Update = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (modifiedCount > 0) {
+                if (data.modifiedCount > 0) {
                     
                     Swal.fire({
                         title: 'Success',

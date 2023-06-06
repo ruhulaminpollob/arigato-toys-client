@@ -11,6 +11,7 @@ const MyToys = () => {
     const { user, loading } = useContext(AuthContext)
     const [myToys, setMyToys] = useState([])
 
+    const [deleteClick, setDeleteClick] = useState(true)
 
     if (loading) {
         return <Loading></Loading>
@@ -22,11 +23,11 @@ const MyToys = () => {
                 setMyToys(data);
             })
 
-    }, [])
+    }, [deleteClick])
     return (
         <div className=''>
             {
-                myToys.map(singleToy=><MyToysCards key={singleToy._id} singleToy={singleToy} />)
+                myToys.map(singleToy=><MyToysCards key={singleToy._id} singleToy={singleToy} deleteClick={deleteClick} setDeleteClick={setDeleteClick} />)
             }
         </div>
     );

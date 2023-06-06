@@ -1,14 +1,32 @@
+import { data } from 'autoprefixer';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-const MyToysCards = ({singleToy}) => {
+const MyToysCards = ({ singleToy, deleteClick,setDeleteClick }) => {
 
-    const {_id, name, quantity,price, category, description, photo}=singleToy || {}
-    
+    const { _id, name, quantity, price, category, description, photo } = singleToy || {}
 
-    
-    const handleDelete=id=>{
-        console.log(id);
+
+
+    const handleDelete = id => {
+        fetch(`http://localhost:5000/toys/${id}`,{
+            method:'DELETE'
+        })
+            .then(res => res.json())
+            .then(data=>{
+                console.log(data);
+                if (data.deletedCount > 0) {
+                    
+                    Swal.fire({
+                        title: 'Success',
+                        text: 'Successfully Updated a Toy',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+                    setDeleteClick(!deleteClick)
+                }
+            })
     }
     return (
         <div className="card my-5 lg:card-side bg-base-100 shadow-xl">
@@ -23,7 +41,7 @@ const MyToysCards = ({singleToy}) => {
                 </div>
                 <div className="card-actions justify-end">
                     <Link to={`/update/${_id}`} className="btn btn-success text-white">Update</Link>
-                    <button className="btn btn-error text-white" onClick={()=>handleDelete(_id)}>Delete</button>
+                    <button className="btn btn-error text-white" onClick={() => handleDelete(_id)}>Delete</button>
                 </div>
             </div>
         </div>
