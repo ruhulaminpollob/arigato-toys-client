@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ToyCollections from '../ToyCollections/ToyCollections';
 
 const Home = () => {
@@ -19,7 +20,7 @@ const Home = () => {
                             <p className='text-gray-700 font-bold'>There are deferent type of anime action figure or toys are available at vary cheep prise.</p>
                         </div>
                         <div className=" flex gap-5">
-                            <button className="btn btn-warning">Discover More</button>
+                            <Link to="/alltoys" className="btn btn-warning text-white">Explore All Toys</Link>
                             
                         </div>
 
@@ -40,7 +41,7 @@ const Home = () => {
                             <p className='text-gray-700 font-bold'>There are deferent type of anime action figure or toys are available at vary cheep prise. </p>
                         </div>
                         <div className=" flex gap-5">
-                            <button className="btn btn-warning">Discover More</button>
+                            <Link to="/alltoys" className="btn btn-warning text-white">Explore All Toys</Link>
                             
                         </div>
 
@@ -61,7 +62,7 @@ const Home = () => {
                             <p className='text-gray-700 font-bold'>There are deferent type of anime action figure or toys are available at vary cheep prise.t </p>
                         </div>
                         <div className=" flex gap-5">
-                            <button className="btn btn-warning">Discover More</button>
+                            <Link to="/alltoys" className="btn btn-warning text-white">Explore All Toys</Link>
                             
                         </div>
 
@@ -82,7 +83,7 @@ const Home = () => {
                             <p className='text-gray-700 font-bold'>There are deferent type of anime action figure or toys are available at vary cheep prise.t </p>
                         </div>
                         <div className=" flex gap-5">
-                            <button className="btn btn-warning">Discover More</button>
+                            <Link to="/alltoys" className="btn btn-warning  text-white">Explore All Toys</Link>
                             
                         </div>
 
