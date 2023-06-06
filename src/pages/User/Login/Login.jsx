@@ -39,7 +39,7 @@ const Login = () => {
         googleLogin()
             .then(result => {
                 console.log(result)
-                navigate("/")
+                navigate(from, {replace: true})
             })
             .catch(error => {
                 console.log(error);

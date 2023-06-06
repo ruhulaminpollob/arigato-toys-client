@@ -79,7 +79,7 @@ const NavBar = () => {
                     </ul>
                 </div>
 
-                <Link className='text-center w-fit' to="/"><img className='h-10 w-auto mx-auto' src="https://i.ibb.co/fxn1PrB/toylogo.png" alt="" />
+                <Link className='text-center w-fit' to="/"><img className='h-10 w-auto mx-auto' src="https://i.ibb.co/rbq6w3S/toylogo2.png" alt="" />
                     <h2 className='text-2xl font-bold text-cyan-400'>Arigato <span className='text-yellow-400'>Toys</span></h2>
                 </Link>
 

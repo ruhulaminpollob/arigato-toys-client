@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../providers/AuthProvider';
 
@@ -17,7 +17,7 @@ const Update = () => {
         return <Loading></Loading>
     }
     
-    
+    const navigate=useNavigate()
 
     const {_id, name, quantity, category, price, description, photo}=toyData || {}
     
@@ -56,6 +56,15 @@ const Update = () => {
                         title: 'Success',
                         text: 'Successfully Updated a Toy',
                         icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+                    navigate('/mytoys')
+                }
+                else{
+                    Swal.fire({
+                        title: 'Opps!',
+                        text: 'Nothing changed',
+                        icon: 'warning',
                         confirmButtonText: 'Ok'
                     })
                 }

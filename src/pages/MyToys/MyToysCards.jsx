@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 
 const MyToysCards = ({ singleToy, deleteClick, setDeleteClick }) => {
 
-    const { _id, name, quantity, price, category, description, photo } = singleToy || {}
+    const { _id, name, quantity, price, category,rating, description, photo } = singleToy || {}
 
 
 
@@ -53,6 +53,7 @@ const MyToysCards = ({ singleToy, deleteClick, setDeleteClick }) => {
                     <small>Category: {category}</small>
                     <p>Quantity: {quantity}</p>
                     <p>Price: ${price}</p>
+                    <p>Ratings: {rating}</p>
                     <small>{description}</small>
                 </div>
                 <div className="card-actions justify-end">
