@@ -3,11 +3,13 @@ import { useState } from 'react';
 import Marquee from 'react-fast-marquee';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import Decoration from '../Decoration/Decoration';
 import Gallery from '../Gallery/Gallery';
+import NewsLetters from '../NewsLettesr/NewsLetters';
 import ToyCollections from '../ToyCollections/ToyCollections';
 
 const Home = () => {
-    const {loading}=useContext(AuthContext)
+    const { loading } = useContext(AuthContext)
     if (loading) {
         return
     }
@@ -116,6 +118,10 @@ const Home = () => {
             </div>
             {/* <Gallery></Gallery> */}
             <ToyCollections></ToyCollections>
+
+            <Decoration></Decoration>
+            <NewsLetters></NewsLetters>
+
         </div>
     );
 };
