@@ -60,19 +60,19 @@ const SignUp = () => {
                     <label className="label">
                         <span className="label-text">Name</span>
                     </label>
-                    <input type="text" name='name' placeholder="Name" className="input input-bordered" />
+                    <input type="text" name='name' placeholder="Name" required className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Email</span>
                     </label>
-                    <input type="text" name='email' placeholder="email" className="input input-bordered" />
+                    <input type="text" name='email' placeholder="email" required className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Password</span>
                     </label>
-                    <input type="text" name='password' placeholder="password" className="input input-bordered" />
+                    <input type="text" name='password' placeholder="password" required className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">

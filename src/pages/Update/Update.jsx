@@ -85,7 +85,7 @@ const Update = () => {
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name='toyname' defaultValue={name} placeholder="Toy Name" className="input input-bordered w-full" />
+                            <input type="text" name='toyname' required defaultValue={name} placeholder="Toy Name" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control  md:w-1/2">
@@ -93,7 +93,7 @@ const Update = () => {
                             <span className="label-text">Available Quantity</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name='quantity' defaultValue={quantity} placeholder="Available Quantity" className="input input-bordered w-full" />
+                            <input type="text" name='quantity' required defaultValue={quantity} placeholder="Available Quantity" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -107,7 +107,7 @@ const Update = () => {
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name='category' defaultValue={category} placeholder="Category" className="input input-bordered w-full" />
+                            <input type="text" name='category' required defaultValue={category} placeholder="Category" className="input input-bordered w-full" />
                         </label>
 
                         
@@ -118,7 +118,7 @@ const Update = () => {
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name='price' defaultValue={price} placeholder="Price" className="input input-bordered w-full" />
+                            <input type="text" name='price' required defaultValue={price} placeholder="Price" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -128,7 +128,7 @@ const Update = () => {
                         <span className="label-text">Toy URL</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name='photo' defaultValue={photo} placeholder="https://demotoy.jpg" className="input input-bordered w-full" />
+                        <input type="text" name='photo' required defaultValue={photo} placeholder="https://demotoy.jpg" className="input input-bordered w-full" />
                     </label>
                 </div>
 
@@ -140,7 +140,7 @@ const Update = () => {
                         <span className="label-text">Toy Description</span>
                     </label>
                     <label className="input-group">
-                        <textarea name='description' defaultValue={description} placeholder="Toy Description" className="input  textarea textarea-bordered textarea-sm h-5 w-full max-w-full" ></textarea>
+                        <textarea name='description' required defaultValue={description} placeholder="Toy Description" className="input  textarea textarea-bordered textarea-sm h-5 w-full max-w-full" ></textarea>
                     </label>
                 </div>
 
