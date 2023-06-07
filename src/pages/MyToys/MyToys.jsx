@@ -24,10 +24,22 @@ const MyToys = () => {
             })
 
     }, [deleteClick])
+
+    // console.log(myToys);
+
+    const sortByPrice =  () => {
+        const sortedToys = [...myToys].sort((a, b) => a.price - b.price);
+        setMyToys(sortedToys);
+        // console.log(sortedToys);
+    };
+
     return (
         <div className=''>
+            <div className='p-5 bg-yellow-200 rounded'>
+                <button onClick={sortByPrice} className=' btn btn-info text-white'>Sort by Price</button>
+            </div>
             {
-                myToys.map(singleToy=><MyToysCards key={singleToy._id} singleToy={singleToy} deleteClick={deleteClick} setDeleteClick={setDeleteClick} />)
+                myToys.map(singleToy => <MyToysCards key={singleToy._id} singleToy={singleToy} deleteClick={deleteClick} setDeleteClick={setDeleteClick} />)
             }
         </div>
     );
