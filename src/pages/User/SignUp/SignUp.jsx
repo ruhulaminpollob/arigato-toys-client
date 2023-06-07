@@ -19,15 +19,12 @@ const SignUp = () => {
         const password = form.password.value;
         const photo = form.photo.value;
 
-        console.log(name, email, password, photo);
 
         // create user
         createUser(email, password)
             .then(result => {
-                // console.log(result);
                 userDetails(result.user, name, photo)
                     .then(results => {
-                        console.log(results);
                         Swal.fire({
                             title: 'Success',
                             text: 'Account Created Successfully Now Login',
@@ -45,12 +42,11 @@ const SignUp = () => {
                     .then(() => { 
                         navigate('/login')
                     })
-                    .then(err => console.log(err))
+                    .then(err => {})
 
             })
             .catch(error => {
                 setError(error.message)
-                console.log(error)
             })
 
     }

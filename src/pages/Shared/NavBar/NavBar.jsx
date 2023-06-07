@@ -44,12 +44,7 @@ const NavBar = () => {
                     })
             }
         })
-
-
-
-        
     }
-    console.log(user?.photoURL)
 
     const navLink = <>
         {/* All Toys, My Toys, Add A Toy, Blogs, and User profile picture */}
