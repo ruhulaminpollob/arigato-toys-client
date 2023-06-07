@@ -27,16 +27,32 @@ const MyToys = () => {
 
     // console.log(myToys);
 
-    const sortByPrice =  () => {
+    const sortByPriceAscending = () => {
         const sortedToys = [...myToys].sort((a, b) => a.price - b.price);
         setMyToys(sortedToys);
         // console.log(sortedToys);
     };
 
+    const sortByPriceDescending = () => {
+        const sortedToys = [...myToys].sort((b, a) => a.price - b.price);
+        setMyToys(sortedToys);
+    };
+
     return (
         <div className=''>
+
+
             <div className='p-5 bg-yellow-200 rounded'>
-                <button onClick={sortByPrice} className=' btn btn-info text-white'>Sort by Price</button>
+                <details className="dropdown">
+                    <summary className="m-1 btn">Sort by price</summary>
+                    <ul className="p-2 z-10 shadow menu dropdown-content bg-base-100 rounded-box w-52">
+                        <li ><a onClick={sortByPriceAscending}>Ascending</a></li>
+                        <li><a onClick={sortByPriceDescending}>Descending</a></li>
+                    </ul>
+                </details>
+
+                <h1></h1>
+                
             </div>
             {
                 myToys.map(singleToy => <MyToysCards key={singleToy._id} singleToy={singleToy} deleteClick={deleteClick} setDeleteClick={setDeleteClick} />)
