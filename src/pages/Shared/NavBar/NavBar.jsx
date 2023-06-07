@@ -2,7 +2,7 @@ import React from 'react';
 import Swal from 'sweetalert2'
 import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline'
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import Loading from '../Loading/Loading';
 
@@ -10,8 +10,11 @@ const NavBar = () => {
 
     const { user, loading, logOut } = useContext(AuthContext)
     if (loading) {
-        return <Loading></Loading>
+        return ;
     }
+    const navigate=useNavigate()
+
+
 
     const unknownUser = "https://i.ibb.co/f4B3L41/user21.png"
     const unknownName = "Unknown"
@@ -36,6 +39,7 @@ const NavBar = () => {
                             icon: 'success',
                             confirmButtonText: 'Ok'
                         })
+                        navigate('/')
                     })
                     .catch(error => {
                         console.log(error);

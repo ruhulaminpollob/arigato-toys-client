@@ -44,7 +44,7 @@ const MyToys = () => {
 
             <div className='p-5 bg-yellow-200 rounded'>
                 <details className="dropdown">
-                    <summary className="m-1 btn">Sort by price</summary>
+                    <summary className="m-1 btn bg-cyan-400 text-white hover:bg-cyan-500">Sort by price</summary>
                     <ul className="p-2 z-10 shadow menu dropdown-content bg-base-100 rounded-box w-52">
                         <li ><a onClick={sortByPriceAscending}>Ascending</a></li>
                         <li><a onClick={sortByPriceDescending}>Descending</a></li>
