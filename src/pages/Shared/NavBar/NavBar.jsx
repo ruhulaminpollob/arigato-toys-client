@@ -12,7 +12,6 @@ const NavBar = () => {
     if (loading) {
         return ;
     }
-    const navigate=useNavigate()
 
 
 
@@ -39,7 +38,6 @@ const NavBar = () => {
                             icon: 'success',
                             confirmButtonText: 'Ok'
                         })
-                        navigate('/')
                     })
                     .catch(error => {
                         console.log(error);
