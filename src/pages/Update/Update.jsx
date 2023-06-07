@@ -8,19 +8,19 @@ import Loading from '../Shared/Loading/Loading';
 
 
 const Update = () => {
-    
 
-    const toyData=useLoaderData()
-    const {user,loading}=useContext(AuthContext)
+
+    const toyData = useLoaderData()
+    const { user, loading } = useContext(AuthContext)
 
     if (loading) {
         return <Loading></Loading>
     }
-    
-    const navigate=useNavigate()
 
-    const {_id, name, quantity, category, price, description, photo}=toyData || {}
-    
+    const navigate = useNavigate()
+
+    const { _id, name, quantity, category, price, description, photo } = toyData || {}
+
 
     const handleUpdate = event => {
         event.preventDefault()
@@ -32,13 +32,12 @@ const Update = () => {
         const price = form.price.value;
         const description = form.description.value;
         const photo = form.photo.value;
-        const supplierEmail=user?.email
-        const supplierName=user?.displayName;
+        const supplierEmail = user?.email
+        const supplierName = user?.displayName;
         // demo rating
-        const rating=4.5;
-        const addedToys = { name, quantity, category,price, description, photo ,rating ,supplierName,supplierEmail}
+        const rating = 4.5;
+        const addedToys = { name, quantity, category, price, description, photo, rating, supplierName, supplierEmail }
 
-        // console.log(addedToys);
         // send data to the server 
         fetch(`https://arigatou-toys-server.vercel.app/toys/${_id}`, {
             method: 'PUT',
@@ -49,9 +48,8 @@ const Update = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.modifiedCount > 0) {
-                    
+
                     Swal.fire({
                         title: 'Success',
                         text: 'Successfully Updated a Toy',
@@ -60,7 +58,7 @@ const Update = () => {
                     })
                     navigate('/mytoys')
                 }
-                else{
+                else {
                     Swal.fire({
                         title: 'Opps!',
                         text: 'Nothing changed',
@@ -71,7 +69,7 @@ const Update = () => {
             })
 
     }
-    
+
 
     return (
         <div>
@@ -111,6 +109,8 @@ const Update = () => {
 
                             <input type="text" name='category' defaultValue={category} placeholder="Category" className="input input-bordered w-full" />
                         </label>
+
+                        
                     </div>
                     <div className="form-control md:w-1/2">
                         <label className="label">

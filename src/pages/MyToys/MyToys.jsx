@@ -25,12 +25,9 @@ const MyToys = () => {
 
     }, [deleteClick])
 
-    // console.log(myToys);
-
     const sortByPriceAscending = () => {
         const sortedToys = [...myToys].sort((a, b) => a.price - b.price);
         setMyToys(sortedToys);
-        // console.log(sortedToys);
     };
 
     const sortByPriceDescending = () => {

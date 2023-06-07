@@ -20,14 +20,11 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(email, password);
         login(email,password)
         .then(result=>{
-            console.log(result);
            navigate(from, {replace: true})
         })
         .catch(err=>{
-            console.log(err);
             setError(err.message)
         })
     }
@@ -38,11 +35,9 @@ const Login = () => {
     const handleGoogleLogin = () => {
         googleLogin()
             .then(result => {
-                console.log(result)
                 navigate(from, {replace: true})
             })
             .catch(error => {
-                console.log(error);
                 setError(error.message)
             })
 

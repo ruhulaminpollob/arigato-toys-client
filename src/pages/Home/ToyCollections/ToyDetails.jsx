@@ -5,7 +5,6 @@ import { useLoaderData } from 'react-router-dom';
 
 const ToyDetails = () => {
     const loadedToyData=useLoaderData()
-    console.log(loadedToyData);
     const [toyData,setToyData]=useState(loadedToyData)
     const { name, quantity, category, price, description, photo, rating, supplierName, supplierEmail } = toyData || {}
     return (

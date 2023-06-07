@@ -32,7 +32,6 @@ const AddToys = () => {
         const rating=4.5;
         const addedToys = { name, quantity, category,price, description, photo ,rating ,supplierName,supplierEmail}
 
-        console.log(addedToys);
         // send data to the server 
         fetch('https://arigatou-toys-server.vercel.app/toys', {
             method: 'POST',
@@ -43,7 +42,6 @@ const AddToys = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 Swal.fire({
                     title: 'Success',
                     text: 'Successfully Added A Toy',

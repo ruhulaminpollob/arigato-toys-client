@@ -10,31 +10,35 @@ const Decoration = () => {
             <div className='grid md:grid-cols-2 p-10'>
                 <div className=''>
                     <h1 className='text-2xl font-bold'>Now days decorate pc is common passion for pc lovers</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere et reiciendis expedita debitis mollitia in dolor, eum provident. Unde sit dignissimos debitis laudantium. Explicabo quos iste assumenda soluta aliquid illo velit, obcaecati et beatae ducimus culpa voluptatem consequuntur odio laboriosam commodi aut, facere harum? Asperiores exercitationem officia numquam, doloremque id sed porro, quidem dignissimos vitae aspernatur veniam, beatae esse cupiditate architecto laboriosam. Eaque sit esse eveniet cum dolor voluptate error excepturi minus ipsa doloribus. Fugiat, tempora neque nihil quia hic delectus impedit architecto quam voluptate alias molestiae maxime ad iusto consequatur labore necessitatibus possimus doloremque perferendis asperiores quisquam similique voluptatem molestias? Ullam quasi quos commodi est ipsam voluptates ab similique iure reiciendis alias, aspernatur aut laborum, debitis, magni dolor quibusdam esse natus? Perspiciatis excepturi temporibus natus praesentium, facere impedit quidem recusandae consectetur officia, maiores dolorum qui officiis voluptates cumque minima molestias optio voluptatum rem animi accusamus iusto voluptatibus iure, quam aliquam. Adipisci odit unde nisi quis atque nihil, ipsum aperiam, quos iusto assumenda minima labore impedit, pariatur sed autem enim nostrum deserunt aspernatur tempore cumque commodi eaque harum eligendi soluta. Quia nisi dolores amet nobis, hic quam nulla temporibus quaerat labore nihil, officiis animi nesciunt perspiciatis unde, odio illo sit!</p>
+                    <p>Action figure is a hobby that knows no age, even most enthusiasts of action figure collections are adults. From the inexpensive to the most expensive, action figures indeed their own entertainment in the center of our activities and busyness. Action figures themselves are usually in the form of miniatures of various characters from movies, anime, to favorite games. With shapes and details that are similar to the original, of course in mini size, action figures have become a lifestyle and have their own community.
+                        For those of you who have a large collection of action figures, usually you will be happy to show it with style. However, for some reason too many action figures take up a lot of space in the house so they look messy. I’m a fan of action figures, and I thought what if action figures became part of the room? In this post I have collected 7 cool ways to decorate a room with action figures, not only as a storage unit but also as part of the interior.
+                    </p>
                 </div>
                 <div className=''>
                     <img data-AOS="fade-flip" src="https://i.ibb.co/SQ3Tx4L/decorate1.jpg" alt="" />
                 </div>
             </div>
-            <div className='grid md:grid-cols-2 p-10'data-AOS="fade-down">
+            <div className='grid md:grid-cols-2 p-10' data-AOS="fade-down">
                 <div data-AOS="fade-flip" className=''>
                     <img src="https://i.ibb.co/pbgG9QJ/decoration2.jpg" alt="" />
                 </div>
                 <div className=''>
-                    <h1 className='text-2xl font-bold'>Now days decorate pc is common passion for pc lovers</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere et reiciendis expedita debitis mollitia in dolor, eum provident. Unde sit dignissimos debitis laudantium. Explicabo quos iste assumenda soluta aliquid illo velit, obcaecati et beatae ducimus culpa voluptatem consequuntur odio laboriosam commodi aut, facere harum? Asperiores exercitationem officia numquam, doloremque id sed porro, quidem dignissimos vitae aspernatur veniam, beatae esse cupiditate architecto laboriosam. Eaque sit esse eveniet cum dolor voluptate error excepturi minus ipsa doloribus. Fugiat, tempora neque nihil quia hic delectus impedit architecto quam voluptate alias molestiae maxime ad iusto consequatur labore necessitatibus possimus doloremque perferendis asperiores quisquam similique voluptatem molestias? Ullam quasi quos commodi est ipsam voluptates ab similique iure reiciendis alias, aspernatur aut laborum, debitis, magni dolor quibusdam esse natus? Perspiciatis excepturi temporibus natus praesentium, facere impedit quidem recusandae consectetur officia, maiores dolorum qui officiis voluptates cumque minima molestias optio voluptatum rem animi accusamus iusto voluptatibus iure, quam aliquam. Adipisci odit unde nisi quis atque nihil, ipsum aperiam, quos iusto assumenda minima labore impedit, pariatur sed autem enim nostrum deserunt aspernatur tempore cumque commodi eaque harum eligendi soluta. Quia nisi dolores amet nobis, hic quam nulla temporibus quaerat labore nihil, officiis animi nesciunt perspiciatis unde, odio illo sit!</p>
+                    <h1 className='text-2xl font-bold'>Some Important Things to Know about decorate with action figure</h1>
+                    <p>Displaying your action figures on the walls is not only a great way to display part of your collection, but also a great way to free up some floor space if you want to get rid of those rolling shelves or that bookcase that your figures are currently occupying.
+
+                        There are a few different ways to go about displaying your action figures on your walls. From hanging them to putting them in a mounted display case—Im going to cover a number of different options, and, hopefully, after reading this, you will be able to decide which of these options is best for you and your collection.</p>
                 </div>
             </div>
-            <div className='grid md:grid-cols-2 p-10'data-AOS="fade-down">
+            <div className='grid md:grid-cols-2 p-10' data-AOS="fade-down">
                 <div className=''>
-                    <h1 className='text-2xl font-bold'>Now days decorate pc is common passion for pc lovers</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere et reiciendis expedita debitis mollitia in dolor, eum provident. Unde sit dignissimos debitis laudantium. Explicabo quos iste assumenda soluta aliquid illo velit, obcaecati et beatae ducimus culpa voluptatem consequuntur odio laboriosam commodi aut, facere harum? Asperiores exercitationem officia numquam, doloremque id sed porro, quidem dignissimos vitae aspernatur veniam, beatae esse cupiditate architecto laboriosam. Eaque sit esse eveniet cum dolor voluptate error excepturi minus ipsa doloribus. Fugiat, tempora neque nihil quia hic delectus impedit architecto quam voluptate alias molestiae maxime ad iusto consequatur labore necessitatibus possimus doloremque perferendis asperiores quisquam similique voluptatem molestias? Ullam quasi quos commodi est ipsam voluptates ab similique iure reiciendis alias, aspernatur aut laborum, debitis, magni dolor quibusdam esse natus? Perspiciatis excepturi temporibus natus praesentium, facere impedit quidem recusandae consectetur officia, maiores dolorum qui officiis voluptates cumque minima molestias optio voluptatum rem animi accusamus iusto voluptatibus iure, quam aliquam. Adipisci odit unde nisi quis atque nihil, ipsum aperiam, quos iusto assumenda minima labore impedit, pariatur sed autem enim nostrum deserunt aspernatur tempore cumque commodi eaque harum eligendi soluta. Quia nisi dolores amet nobis, hic quam nulla temporibus quaerat labore nihil, officiis animi nesciunt perspiciatis unde, odio illo sit!</p>
+                    <h1 className='text-2xl font-bold'>Action figure rack wall and bookshelves</h1>
+                    <p>In addition to bookshelves and wall frames, action figures can also be part of an interior wall. The idea is very clever action figure storage by utilizing the broad wall. You can save lots of action figures here, besides making the room even cooler.If usually the wall frame contains photos or posters, you can make it more attractive with action figures. Just like wall frames in general, you only need to arrange various types of action figures in one frame.</p>
                 </div>
                 <div data-AOS="fade-flip" className=''>
                     <img src="https://i.ibb.co/GsKscds/decorate3.jpg" alt="" />
                 </div>
             </div>
-            
+
         </div>
     );
 };
