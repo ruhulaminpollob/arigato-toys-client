@@ -10,6 +10,7 @@ const AllToys = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredResults, setFilteredResults] = useState([]);
 
+    console.log(document.title);
     //
     const handleSearchChange = (event) => {
 

@@ -6,7 +6,7 @@ const NewsLetters = () => {
             <h1 className='text-4xl text-cyan-400 underline font-bold'>NewsLetters</h1>
             <div className='py-20 space-y-10 text-center'>
                 <span className="footer-title">SUBSCRIBE OUR NewsLetters TO STAY UPDATED TO NEW OFFERS AND DISCOUNTS </span>
-                <div className="form-control mx-auto w-80">
+                <div className="form-control mx-auto w-60 md:w-80">
                     <label className="label">
                         <span className="label-text">Enter your email address</span>
                     </label>

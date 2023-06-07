@@ -6,11 +6,7 @@ const ToyCollectionsCard = ({ singleToy }) => {
     const { _id, name, quantity, category, price, description, photo, rating, supplierName, supplierEmail } = singleToy || {}
     const navigate = useNavigate()
     const handelViewDetails = id => {
-        Swal.fire(
-            'Sorry',
-            'You have to login first',
-            'warning'
-          )
+        
         navigate(`/toydetails/${id}`)
     }
     return (
